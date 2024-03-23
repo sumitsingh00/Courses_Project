@@ -23,11 +23,20 @@ const App = () => {
   async function fetchData() {
     setLoading(true);
     try{
+
+      // we use await kyuki jab tak data nhi aaya haitab tak hum spiner clne waal ehai
       let response = await fetch(apiUrl);
       let output = await response.json();// api se jo data aaya hai usko convert kia jason file fromate me
 
 
-      ///output -> 
+      //output -> 
+      // output me data me saare object pad hue hai
+      /*data {
+          bussineus
+          developement 
+          etc
+      }
+      */
       setCourses(output.data);
     }
     catch(error) {
